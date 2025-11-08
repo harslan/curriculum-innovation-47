@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of 47: How Less Became More in Business Education</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css">
+    <style>
+        :root {
+            --suffolk-blue: #1e3c72;
+            --suffolk-gold: #fdb913;
+            --accent-teal: #00b4d8;
+            --success-green: #06d6a0;
+            --warning-red: #ef476f;
+        }
+
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .reveal .slides {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .reveal .slides section {
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-weight: 700;
+            text-transform: none;
+        }
+
+        .reveal h1 {
+            font-size: clamp(1.8em, 5vw, 2.8em);
+            color: var(--suffolk-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .reveal h2 {
+            font-size: clamp(1.4em, 4vw, 2.2em);
+            color: var(--suffolk-gold);
+            margin-bottom: 20px;
+        }
+
+        .reveal h3 {
+            font-size: clamp(1.2em, 3vw, 1.6em);
+            color: var(--accent-teal);
+            margin-bottom: 15px;
+        }
+
+        .reveal .subtitle {
+            font-size: clamp(1em, 2.5vw, 1.4em);
+            font-style: italic;
+            color: #ccc;
+            margin-top: 15px;
+        }
+
+        .reveal section {
+            text-align: left;
+            overflow-y: auto;
+        }
+
+        .reveal .center-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reveal ul {
+            margin: 20px 0;
+        }
+
+        .reveal li {
+            margin: 10px 0;
+            font-size: clamp(0.9em, 2vw, 1.1em);
+        }
+
+        .reveal p {
+            font-size: clamp(0.9em, 2vw, 1.1em);
+        }
+
+        .comparison-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .school-card {
+            background: linear-gradient(135deg, rgba(30,60,114,0.3) 0%, rgba(42,82,152,0.3) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid var(--suffolk-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .school-card h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--suffolk-gold);
+            font-size: clamp(1em, 2.5vw, 1.3em);
+        }
+
+        .school-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .school-card li {
+            padding: 8px;
+            margin: 8px 0;
+            background: rgba(255,255,255,0.1);
+            border-left: 4px solid var(--accent-teal);
+            border-radius: 5px;
+            font-size: clamp(0.85em, 1.8vw, 1em);
+        }
+
+        .school-card p {
+            font-size: clamp(0.9em, 1.8vw, 1.1em);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(253,185,19,0.2) 0%, rgba(239,71,111,0.2) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 6px solid var(--suffolk-gold);
+            margin: 20px 0;
+            font-size: clamp(1em, 2.5vw, 1.3em);
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: rgba(0,180,216,0.2);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--accent-teal);
+        }
+
+        .stat-number {
+            font-size: clamp(2em, 5vw, 3em);
+            font-weight: 700;
+            color: var(--suffolk-gold);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: clamp(0.85em, 1.8vw, 1em);
+            color: #fff;
+        }
+
+        .brand-words {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .brand-word {
+            background: linear-gradient(135deg, var(--warning-red) 0%, rgba(239,71,111,0.7) 100%);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: clamp(0.9em, 2vw, 1.3em);
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .brand-word.positive {
+            background: linear-gradient(135deg, var(--success-green) 0%, rgba(6,214,160,0.7) 100%);
+        }
+
+        .quote-box {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-left: 6px solid var(--accent-teal);
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: clamp(0.95em, 2.2vw, 1.2em);
+            line-height: 1.6;
+        }
+
+        .emoji-large {
+            font-size: clamp(1.5em, 3vw, 2em);
+            margin: 0 10px;
+        }
+
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .competitor-card {
+            background: rgba(255,255,255,0.05);
+            padding: 18px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .competitor-name {
+            font-weight: 700;
+            color: var(--suffolk-gold);
+            font-size: clamp(1em, 2.2vw, 1.3em);
+            margin-bottom: 10px;
+        }
+
+        .competitor-credits {
+            font-size: clamp(1.5em, 3.5vw, 2em);
+            color: var(--accent-teal);
+            font-weight: 700;
+        }
+
+        .competitor-feature {
+            color: #ccc;
+            font-size: clamp(0.8em, 1.6vw, 0.9em);
+            margin-top: 10px;
+        }
+
+        .objection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .objection {
+            background: rgba(239,71,111,0.2);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid var(--warning-red);
+        }
+
+        .objection h3 {
+            font-size: clamp(1em, 2.2vw, 1.2em);
+        }
+
+        .rebuttal {
+            background: rgba(6,214,160,0.2);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid var(--success-green);
+        }
+
+        .rebuttal h3 {
+            font-size: clamp(1em, 2.2vw, 1.2em);
+        }
+
+        .checkmark {
+            color: var(--success-green);
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+
+        .pathway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .pathway-card {
+            background: linear-gradient(135deg, rgba(30,60,114,0.3) 0%, rgba(42,82,152,0.5) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid var(--accent-teal);
+            text-align: center;
+        }
+
+        .pathway-title {
+            font-weight: 700;
+            color: var(--suffolk-gold);
+            font-size: clamp(0.95em, 2vw, 1.2em);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .pathway-course {
+            background: rgba(0,180,216,0.3);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 12px;
+            font-weight: 600;
+            color: var(--accent-teal);
+            font-size: clamp(0.9em, 1.8vw, 1em);
+        }
+
+        .big-number {
+            font-size: clamp(4em, 12vw, 8em);
+            font-weight: 700;
+            color: var(--suffolk-gold);
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin: 30px 0;
+            line-height: 1;
+        }
+
+        .evidence-list {
+            margin: 20px 0;
+        }
+
+        .evidence-item {
+            background: rgba(0,180,216,0.2);
+            padding: 18px;
+            margin: 12px 0;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-teal);
+        }
+
+        .evidence-item p {
+            font-size: clamp(0.9em, 2vw, 1.1em);
+        }
+
+        .evidence-source {
+            font-weight: 700;
+            color: var(--suffolk-gold);
+            margin-bottom: 10px;
+            font-size: clamp(0.95em, 2.2vw, 1.1em);
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .rating-label {
+            min-width: 150px;
+            width: 180px;
+            font-weight: 600;
+            font-size: clamp(0.85em, 1.8vw, 1em);
+            margin-bottom: 5px;
+        }
+
+        .rating-visual {
+            flex: 1;
+            min-width: 200px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .rating-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success-green) 0%, var(--accent-teal) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            font-weight: 700;
+            transition: width 1s ease-out;
+            font-size: clamp(0.85em, 1.8vw, 1em);
+        }
+
+        .rating-fill.low {
+            background: linear-gradient(90deg, var(--warning-red) 0%, rgba(239,71,111,0.7) 100%);
+        }
+
+        .fragment {
+            opacity: 0;
+        }
+
+        .fragment.visible {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .reveal .slides section {
+                padding: 15px;
+            }
+            
+            .comparison-box,
+            .stat-grid,
+            .competitor-grid,
+            .objection-grid,
+            .pathway-grid {
+                gap: 15px;
+            }
+            
+            .big-number {
+                font-size: clamp(3em, 10vw, 6em);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reveal .slides section {
+                padding: 10px;
+            }
+            
+            .comparison-box,
+            .stat-grid,
+            .competitor-grid,
+            .objection-grid,
+            .pathway-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .rating-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .rating-label {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+            
+            .rating-visual {
+                width: 100%;
+            }
+            
+            .brand-words {
+                gap: 8px;
+            }
+            
+            .brand-word {
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reveal h1 {
+                font-size: clamp(1.5em, 6vw, 2.2em);
+            }
+            
+            .reveal h2 {
+                font-size: clamp(1.2em, 5vw, 1.8em);
+            }
+            
+            .school-card,
+            .competitor-card,
+            .pathway-card,
+            .stat-card {
+                padding: 15px;
+            }
+            
+            .highlight-box,
+            .quote-box {
+                padding: 15px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .reveal .slides section {
+                page-break-after: always;
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Title -->
+            <section class="center-content" data-background-gradient="linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)">
+                <h1>The Power of 47</h1>
+                <p class="subtitle">How Less Became More in Business Education</p>
+                <p style="margin-top: 60px; font-size: 1.1em;">A Defense of the SBS Core Curriculum Revision</p>
+                <p style="margin-top: 40px; color: #999;">Sawyer Business School | Suffolk University | 2025</p>
+            </section>
+
+            <!-- Slide 2: The Scenario -->
+            <section>
+                <h2>Imagine This Scenario...</h2>
+                <p style="font-size: 1.2em; margin-bottom: 40px;">It's 11 PM on a Tuesday. You're a high school senior scrolling through college websites...</p>
+                
+                <div class="comparison-box">
+                    <div class="school-card">
+                        <h3>School A</h3>
+                        <p style="text-align: center; margin: 20px 0;">"We require <span style="color: var(--warning-red); font-size: 1.5em; font-weight: 700;">56 credits</span> of core courses because we believe comprehensive business education means MORE."</p>
+                    </div>
+                    <div class="school-card">
+                        <h3>School B</h3>
+                        <p style="text-align: center; margin: 20px 0;">"We require <span style="color: var(--success-green); font-size: 1.5em; font-weight: 700;">47 credits</span> of core, giving you <span style="color: var(--suffolk-gold); font-weight: 700;">9 additional credits</span> to explore your passions, develop specialized skills, and create your own path."</p>
+                    </div>
+                </div>
+
+                <div class="fragment">
+                    <p style="font-size: 1.5em; text-align: center; margin-top: 40px; color: var(--suffolk-gold); font-weight: 700;">Which school are you choosing?</p>
+                    <p style="text-align: center; font-size: 1.3em; margin-top: 20px; font-style: italic;">Hmm. <span class="emoji-large">🤔</span></p>
+                </div>
+            </section>
+
+            <!-- Slide 3: The Economics Angle -->
+            <section>
+                <h2>This Drives Educators Crazy</h2>
+                
+                <div class="highlight-box fragment">
+                    No rational curriculum committee should ever recommend REDUCING requirements when we could be giving students MORE knowledge, MORE coverage, MORE... stuff.
+                </div>
+
+                <p class="fragment" style="font-size: 1.4em; text-align: center; margin-top: 50px;">But yet... <span style="color: var(--suffolk-gold); font-weight: 700;">they are.</span></p>
+
+                <div class="fragment" style="text-align: center; margin-top: 50px;">
+                    <p style="font-size: 1.2em;">And that's what we're here to talk about today.</p>
+                </div>
+            </section>
+
+            <!-- Slide 4: The Brand Problem -->
+            <section>
+                <h2>We Have a Brand Problem</h2>
+                
+                <div class="comparison-box">
+                    <div>
+                        <h3 style="text-align: center; color: var(--warning-red);">When They See Our 56 Credits:</h3>
+                        <div class="brand-words">
+                            <span class="brand-word">Rigid</span>
+                            <span class="brand-word">Inflexible</span>
+                            <span class="brand-word">Old-fashioned</span>
+                            <span class="brand-word">One-size-fits-all</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fragment">
+                        <h3 style="text-align: center; color: var(--success-green);">When They See Competitors:</h3>
+                        <div class="brand-words">
+                            <span class="brand-word positive">Modern</span>
+                            <span class="brand-word positive">Student-centered</span>
+                            <span class="brand-word positive">Personalized</span>
+                            <span class="brand-word positive">Future-ready</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fragment quote-box" style="margin-top: 40px;">
+                    What do they see when they look at us? <br>
+                    <span style="color: var(--warning-red); font-size: 1.3em; font-weight: 700;">"Comprehensive."</span>
+                    <br><br>
+                    And comprehensive in 2025 is code for: <br>
+                    <span style="color: var(--suffolk-gold);">"We can't decide what to cut, so we're making you take everything."</span>
+                </div>
+            </section>
+
+            <!-- Slide 5: What Bentley, Babson, BU Say -->
+            <section>
+                <h2>Our Competitors' Brands</h2>
+                
+                <div class="competitor-grid">
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Bentley</div>
+                        <div class="competitor-feature" style="color: var(--accent-teal); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">"Most Flexible"</div>
+                        <ul style="font-size: 0.9em;">
+                            <li>Modern</li>
+                            <li>Student-centered</li>
+                            <li>Personalized pathways</li>
+                        </ul>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Babson</div>
+                        <div class="competitor-feature" style="color: var(--accent-teal); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">"Entrepreneurial"</div>
+                        <ul style="font-size: 0.9em;">
+                            <li>Innovative</li>
+                            <li>Action-oriented</li>
+                            <li>Launch actual businesses</li>
+                        </ul>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Boston University</div>
+                        <div class="competitor-feature" style="color: var(--accent-teal); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">"Analytics-Focused"</div>
+                        <ul style="font-size: 0.9em;">
+                            <li>Cutting-edge</li>
+                            <li>Data-driven</li>
+                            <li>Tech-forward</li>
+                        </ul>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Suffolk</div>
+                        <div class="competitor-feature" style="color: var(--warning-red); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">???</div>
+                        <ul style="font-size: 0.9em;">
+                            <li style="opacity: 0.5;">Comprehensive</li>
+                            <li style="opacity: 0.5;">Traditional</li>
+                            <li style="opacity: 0.5;">Full coverage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fragment highlight-box" style="margin-top: 40px;">
+                    That's not a value proposition. <br>That's a <span style="color: var(--warning-red);">commitment problem.</span>
+                </div>
+            </section>
+
+            <!-- Slide 6: The Identity Loyalty Thesis -->
+            <section class="center-content">
+                <h2>The Identity Loyalty Principle</h2>
+                
+                <div class="highlight-box" style="font-size: 1.5em; line-height: 1.6;">
+                    Students don't choose schools based on what you <span style="color: var(--warning-red);">REQUIRE</span> them to take.
+                </div>
+
+                <div class="fragment highlight-box" style="font-size: 1.6em; line-height: 1.6; margin-top: 40px;">
+                    They choose schools based on what you <span style="color: var(--success-green);">ALLOW</span> them to <span style="color: var(--suffolk-gold);">BECOME</span>.
+                </div>
+
+                <div class="fragment" style="margin-top: 60px;">
+                    <p style="font-size: 1.8em; color: var(--suffolk-gold); font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                        🔥 Students don't buy WHAT you teach. <br>
+                        They buy WHY you teach it and WHO it helps them become. 🔥
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 7: The Data on Specific Courses -->
+            <section>
+                <h2>What Our Advisory Board Told Us</h2>
+                <p style="font-size: 1.1em; margin-bottom: 30px;">These are the people who HIRE our students:</p>
+                
+                <div class="rating-bar fragment">
+                    <span class="rating-label">FIN 200</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill" style="width: 72%;">3.6/5.0</div>
+                    </div>
+                </div>
+                
+                <div class="rating-bar fragment">
+                    <span class="rating-label">ACCT 201</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill" style="width: 70%;">3.5/5.0</div>
+                    </div>
+                </div>
+                
+                <div class="rating-bar fragment">
+                    <span class="rating-label">MKT 210</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill" style="width: 68%;">3.4/5.0</div>
+                    </div>
+                </div>
+
+                <div class="rating-bar fragment">
+                    <span class="rating-label">MGT 217</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill" style="width: 66%;">3.3/5.0</div>
+                    </div>
+                </div>
+
+                <p class="fragment" style="margin-top: 40px; font-size: 1.1em; text-align: center; color: var(--success-green);">
+                    <span class="checkmark">✓</span> "Essential. Every business graduate must speak this language."
+                </p>
+
+                <div style="height: 40px;"></div>
+
+                <div class="rating-bar fragment">
+                    <span class="rating-label">ACCT 202</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill low" style="width: 56%;">2.8/5.0</div>
+                    </div>
+                </div>
+
+                <div class="rating-bar fragment">
+                    <span class="rating-label">ECON 102</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill low" style="width: 54%;">2.7/5.0</div>
+                    </div>
+                </div>
+
+                <div class="rating-bar fragment">
+                    <span class="rating-label">ISOM 319</span>
+                    <div class="rating-visual">
+                        <div class="rating-fill low" style="width: 52%;">2.6/5.0</div>
+                    </div>
+                </div>
+
+                <div class="fragment quote-box" style="margin-top: 30px;">
+                    "Important for specific majors, but not universal requirements."
+                </div>
+            </section>
+
+            <!-- Slide 8: The Market Has Spoken -->
+            <section class="center-content">
+                <h2>The Market Has Spoken</h2>
+                
+                <div class="highlight-box" style="font-size: 1.5em;">
+                    Our own stakeholders—the people paying tuition and hiring graduates—are telling us:
+                </div>
+
+                <div class="fragment" style="margin: 60px 0;">
+                    <p style="font-size: 2em; color: var(--suffolk-gold); font-weight: 700;">
+                        "You're teaching some things that only SOME students need."
+                    </p>
+                </div>
+
+                <div class="stat-grid fragment">
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Need FIN 200</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Need ACCT 201</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">~30%</span>
+                        <span class="stat-label">Need Operations</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: The Tyranny of And -->
+            <section>
+                <h2>The Tyranny of "AND"</h2>
+                
+                <p style="font-size: 1.3em; margin-bottom: 30px;">Why not just keep everything?</p>
+
+                <div class="fragment highlight-box">
+                    Every credit we REQUIRE is a credit they CAN'T use for:
+                </div>
+
+                <ul class="fragment" style="font-size: 1.2em; margin-top: 40px;">
+                    <li>💼 A second major or minor</li>
+                    <li>🌍 Study abroad without delay</li>
+                    <li>🎯 Specialized electives (AI, sustainability, ESG)</li>
+                    <li>🏢 Internships for credit</li>
+                    <li>🧠 Mental health (actual breathing room)</li>
+                </ul>
+
+                <div class="fragment quote-box" style="margin-top: 40px;">
+                    When we over-require, we communicate: <br>
+                    <span style="color: var(--warning-red); font-size: 1.3em; font-weight: 700;">
+                        "We don't trust you to make good choices. We'll make them for you."
+                    </span>
+                </div>
+
+                <p class="fragment" style="text-align: center; font-size: 1.3em; margin-top: 30px;">
+                    And that creates: <span style="color: var(--warning-red); font-weight: 700;">Resentment. Disengagement. Attrition.</span>
+                </p>
+            </section>
+
+            <!-- Slide 10: The Research Evidence -->
+            <section>
+                <h2>The Data on Flexibility & Retention</h2>
+                <p style="font-size: 1.1em; margin-bottom: 30px;">This isn't theory. This is international evidence:</p>
+                
+                <div class="evidence-list">
+                    <div class="evidence-item fragment">
+                        <div class="evidence-source">📊 Bureau et al. (2021) - Meta-Analysis</div>
+                        <p>Curriculum autonomy correlates with student agency, satisfaction, and retention.</p>
+                    </div>
+
+                    <div class="evidence-item fragment">
+                        <div class="evidence-source">📊 OECD Education Report (2023)</div>
+                        <p>Flexible curricula enhance co-agency and prepare students for dynamic careers.</p>
+                    </div>
+
+                    <div class="evidence-item fragment">
+                        <div class="evidence-source">📊 National Retention Data</div>
+                        <p>Students who can personalize their degrees persist at higher rates and report greater satisfaction.</p>
+                    </div>
+
+                    <div class="evidence-item fragment">
+                        <div class="evidence-source">📊 SBS Advising Office Testimony</div>
+                        <p>"When students can see themselves in their degree program, when they can craft a narrative that says 'This is MY path, not just THE path'—they stay. They thrive. They graduate."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Competitive Reality -->
+            <section>
+                <h2>The Competitive Reality Check</h2>
+                
+                <p style="font-size: 1.2em; margin-bottom: 40px;">Whether we like it or not, we're in a <span style="color: var(--suffolk-gold); font-weight: 700;">market</span>.</p>
+
+                <div class="competitor-grid">
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Bentley</div>
+                        <div class="competitor-credits">42-45</div>
+                        <div class="competitor-feature">Most flexible in region</div>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Babson</div>
+                        <div class="competitor-credits">~47</div>
+                        <div class="competitor-feature">Entrepreneurial focus</div>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Boston University</div>
+                        <div class="competitor-credits">~48</div>
+                        <div class="competitor-feature">Analytics-forward</div>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Northeastern</div>
+                        <div class="competitor-credits">~50</div>
+                        <div class="competitor-feature">Co-op integration</div>
+                    </div>
+
+                    <div class="competitor-card fragment">
+                        <div class="competitor-name">Boston College</div>
+                        <div class="competitor-credits">49</div>
+                        <div class="competitor-feature">Discipline-specific depth</div>
+                    </div>
+
+                    <div class="competitor-card fragment" style="border: 3px solid var(--warning-red);">
+                        <div class="competitor-name" style="color: var(--warning-red);">Suffolk</div>
+                        <div class="competitor-credits" style="color: var(--warning-red);">56</div>
+                        <div class="competitor-feature" style="color: var(--warning-red);">6-9 MORE credits required</div>
+                    </div>
+                </div>
+
+                <div class="fragment highlight-box" style="margin-top: 40px;">
+                    That's not comprehensive. That's <span style="color: var(--warning-red); font-weight: 700;">competitive liability</span>.
+                </div>
+            </section>
+
+            <!-- Slide 12: The 47 -->
+            <section class="center-content">
+                <div class="big-number">47</div>
+                <p style="font-size: 2em; color: var(--accent-teal); font-weight: 600;">The Magic Number</p>
+            </section>
+
+            <!-- Slide 13: The Choose-One Model -->
+            <section>
+                <h2>The "Choose-One" Model</h2>
+                <p style="font-size: 1.2em; margin-bottom: 40px;">Beautifully simple. Strategically brilliant.</p>
+                
+                <div style="background: rgba(239,71,111,0.2); padding: 30px; border-radius: 15px; margin-bottom: 40px;">
+                    <h3 style="text-align: center; color: var(--warning-red); text-decoration: line-through;">Current Requirement:</h3>
+                    <ul style="text-align: center; list-style: none; font-size: 1.2em;">
+                        <li>ACCT 202 <span style="color: var(--warning-red); font-weight: 700;">AND</span></li>
+                        <li>ECON 102 <span style="color: var(--warning-red); font-weight: 700;">AND</span></li>
+                        <li>ISOM 319</li>
+                    </ul>
+                </div>
+
+                <div class="fragment" style="background: rgba(6,214,160,0.2); padding: 30px; border-radius: 15px;">
+                    <h3 style="text-align: center; color: var(--success-green);">New Requirement:</h3>
+                    <p style="text-align: center; font-size: 1.5em; color: var(--suffolk-gold); font-weight: 700; margin: 20px 0;">
+                        Choose ONE
+                    </p>
+                    <p style="text-align: center; font-size: 1.1em;">based on your major and career goals</p>
+                </div>
+
+                <div class="pathway-grid fragment" style="margin-top: 40px;">
+                    <div class="pathway-card">
+                        <div class="pathway-title">Supply Chain / Operations Majors</div>
+                        <div class="pathway-course">ISOM 319<br>Operations</div>
+                    </div>
+                    <div class="pathway-card">
+                        <div class="pathway-title">Finance / Economics Majors</div>
+                        <div class="pathway-course">ECON 102<br>Macroeconomics</div>
+                    </div>
+                    <div class="pathway-card">
+                        <div class="pathway-title">Accounting Majors</div>
+                        <div class="pathway-course">ACCT 202<br>Managerial</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Why This Is Brilliant -->
+            <section>
+                <h2>Why This Is Brilliant (Not Risky)</h2>
+                
+                <div class="evidence-item fragment">
+                    <div class="evidence-source"><span class="checkmark">✓</span> We're Not Eliminating Content</div>
+                    <p>We're making it <span style="color: var(--success-green); font-weight: 700;">discipline-appropriate</span>. Students who NEED Operations will take it. We're replacing the forced march with an informed choice.</p>
+                </div>
+
+                <div class="evidence-item fragment">
+                    <div class="evidence-source"><span class="checkmark">✓</span> We're Preserving THE ESSENTIALS</div>
+                    <p>Every universal requirement scored 3.3+ from advisory boards. FIN 200, ACCT 201, MKT 210, MGT 217, ISOM 210—all remain required.</p>
+                </div>
+
+                <div class="evidence-item fragment">
+                    <div class="evidence-source"><span class="checkmark">✓</span> Creates a Natural Experiment</div>
+                    <p>If 60% choose ECON 102, we know students are finance/consulting oriented. If ISOM 319 surges, supply chain is hot. We can allocate resources intelligently instead of guessing.</p>
+                </div>
+
+                <div class="evidence-item fragment">
+                    <div class="evidence-source"><span class="checkmark">✓</span> Frees 6 Credits for Specialization</div>
+                    <p>Double majors, minors, study abroad, advanced electives in AI/sustainability/ESG, experiential learning.</p>
+                </div>
+            </section>
+
+            <!-- Slide 15: The Identity Loyalty Payoff -->
+            <section>
+                <h2>The Identity Loyalty Payoff</h2>
+                
+                <div class="highlight-box">
+                    When we move to 47 credits with a choose-one model, <br>we're not just cutting requirements.
+                </div>
+
+                <p class="fragment" style="font-size: 2em; text-align: center; margin: 50px 0; color: var(--suffolk-gold); font-weight: 700;">
+                    We're creating identity loyalty with Suffolk Business School.
+                </p>
+
+                <div class="fragment">
+                    <h3 style="color: var(--accent-teal);">Students will say:</h3>
+                    <ul style="font-size: 1.2em; margin-top: 30px;">
+                        <li>💙 "Suffolk trusts me to make smart choices."</li>
+                        <li>💙 "Suffolk's curriculum is flexible and modern."</li>
+                        <li>💙 "Suffolk prepared me for MY career, not just A career."</li>
+                    </ul>
+                </div>
+
+                <div class="fragment quote-box" style="margin-top: 40px;">
+                    That emotional connection—that alignment between THEIR values and OUR structure—that's what creates <span style="color: var(--suffolk-gold); font-weight: 700;">brand ambassadors</span>. Alumni who donate, recruit, and advocate.
+                </div>
+            </section>
+
+            <!-- Slide 16: Objections -->
+            <section>
+                <h2>The Objections (And Rebuttals)</h2>
+                
+                <div class="objection-grid">
+                    <div>
+                        <div class="objection fragment">
+                            <h3 style="color: var(--warning-red); margin-bottom: 15px;">❌ "We'll lose rigor!"</h3>
+                        </div>
+                        <div class="rebuttal fragment">
+                            <h3 style="color: var(--success-green); margin-bottom: 15px;">✓ Actually...</h3>
+                            <p>Rigor isn't measured by credit count. It's measured by learning outcomes. Our foundational courses remain. Our capstone remains. We're redirecting rigor toward depth and specialization.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="objection fragment">
+                            <h3 style="color: var(--warning-red); margin-bottom: 15px;">❌ "Students need exposure to everything!"</h3>
+                        </div>
+                        <div class="rebuttal fragment">
+                            <h3 style="color: var(--success-green); margin-bottom: 15px;">✓ They're getting it</h3>
+                            <p>FIN, ACCT 201, MKT, MGT, ISOM 210, ECON 101, BLE—all still required. We're letting them go deeper in ONE area instead of surface-level in three.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="objection-grid" style="margin-top: 30px;">
+                    <div>
+                        <div class="objection fragment">
+                            <h3 style="color: var(--warning-red); margin-bottom: 15px;">❌ "What if students choose wrong?"</h3>
+                        </div>
+                        <div class="rebuttal fragment">
+                            <h3 style="color: var(--success-green); margin-bottom: 15px;">✓ With proper advising...</h3>
+                            <p>Major-specific guidance and career planning ensures students self-select appropriately. And even if they don't? Taking Macro instead of Operations isn't catastrophic—both are valuable business skills.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="objection fragment">
+                            <h3 style="color: var(--warning-red); margin-bottom: 15px;">❌ "This is just following trends!"</h3>
+                        </div>
+                        <div class="rebuttal fragment">
+                            <h3 style="color: var(--success-green); margin-bottom: 15px;">✓ No. It's responding to evidence</h3>
+                            <p>From advisory boards, competitive analysis, retention research, and faculty consensus. When 85% of departments endorse this model, that's not a trend. That's a mandate.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 17: The Evidence Summary -->
+            <section>
+                <h2>Embrace the 47</h2>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">Not because it's trendy, but because:</p>
+                
+                <div class="evidence-item fragment">
+                    <p style="font-size: 1.1em;"><span class="checkmark">✓</span> <span style="color: var(--suffolk-gold); font-weight: 700;">The evidence supports it</span><br>
+                    Advisory boards, retention data, competitive analysis</p>
+                </div>
+
+                <div class="evidence-item fragment">
+                    <p style="font-size: 1.1em;"><span class="checkmark">✓</span> <span style="color: var(--suffolk-gold); font-weight: 700;">The market demands it</span><br>
+                    Students are choosing flexibility over comprehensiveness</p>
+                </div>
+
+                <div class="evidence-item fragment">
+                    <p style="font-size: 1.1em;"><span class="checkmark">✓</span> <span style="color: var(--suffolk-gold); font-weight: 700;">Our faculty endorsed it</span><br>
+                    Departmental consensus on choose-one model (85% support)</p>
+                </div>
+
+                <div class="evidence-item fragment">
+                    <p style="font-size: 1.1em;"><span class="checkmark">✓</span> <span style="color: var(--suffolk-gold); font-weight: 700;">It positions us competitively</span><br>
+                    47 credits = strategic, not minimal; comprehensive, not restrictive</p>
+                </div>
+            </section>
+
+            <!-- Slide 18: Not Doing Less -->
+            <section class="center-content">
+                <div class="highlight-box" style="font-size: 2em; line-height: 1.6;">
+                    This isn't about doing <span style="color: var(--warning-red);">less</span>.
+                </div>
+
+                <div class="fragment highlight-box" style="font-size: 2.5em; line-height: 1.6; margin-top: 50px;">
+                    It's about doing <span style="color: var(--success-green);">better</span>.
+                </div>
+
+                <div class="fragment" style="margin-top: 60px;">
+                    <ul style="font-size: 1.3em; text-align: left; max-width: 800px; margin: 0 auto;">
+                        <li>Creating space for students to breathe, explore, and specialize</li>
+                        <li>Trusting 20-year-olds to make informed decisions with proper advising</li>
+                        <li>Aligning our BRAND with values of autonomy, flexibility, and student agency</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 19: The Final Thesis -->
+            <section class="center-content">
+                <h2 style="font-size: 2.2em; margin-bottom: 60px;">Because at the end of the day...</h2>
+                
+                <div class="highlight-box" style="font-size: 1.8em; line-height: 1.7;">
+                    Students don't choose schools that require the <span style="color: var(--warning-red);">most credits</span>.
+                </div>
+
+                <div class="fragment highlight-box" style="font-size: 2em; line-height: 1.7; margin-top: 50px;">
+                    They choose schools that help them become <span style="color: var(--suffolk-gold);">who they want to be</span>.
+                </div>
+
+                <p class="fragment" style="font-size: 3em; margin-top: 80px; color: var(--accent-teal); font-weight: 700;">
+                    And <span style="color: var(--suffolk-gold);">that</span> is the power of 47.
+                </p>
+            </section>
+
+            <!-- Slide 20: Thank You -->
+            <section class="center-content" data-background-gradient="linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)">
+                <h1 style="font-size: 3.5em; margin-bottom: 40px;">Thank You</h1>
+                <div class="big-number" style="font-size: 6em; margin: 40px 0;">47</div>
+                <p style="font-size: 1.5em; margin-top: 40px;">Questions?</p>
+                <p style="margin-top: 60px; font-size: 1.1em; color: #999;">
+                    Sawyer Business School Core Curriculum Revision<br>
+                    Suffolk University | 2025
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        // Initialize reveal.js with error handling
+        try {
+            Reveal.initialize({
+                hash: true,
+                transition: 'slide',
+                transitionSpeed: 'default',
+                backgroundTransition: 'fade',
+                center: false,
+                width: '100%',
+                height: '100%',
+                margin: 0.04,
+                minScale: 0.2,
+                maxScale: 2.0,
+                controls: true,
+                progress: true,
+                slideNumber: 'c/t',
+                keyboard: true,
+                overview: true,
+                touch: true,
+                loop: false,
+                rtl: false,
+                fragments: true,
+                embedded: false,
+                help: true,
+                showNotes: false,
+                autoPlayMedia: null,
+                preloadIframes: null,
+                mouseWheel: false,
+                hideInactiveCursor: true,
+                hideCursorTime: 5000,
+                previewLinks: false,
+                // Responsive settings
+                respondToHashChanges: true,
+                disableLayout: false
+            });
+
+            // Animate rating bars when they become visible
+            Reveal.on('slidechanged', event => {
+                const ratingFills = event.currentSlide.querySelectorAll('.rating-fill');
+                ratingFills.forEach(fill => {
+                    const width = fill.style.width;
+                    fill.style.width = '0%';
+                    setTimeout(() => {
+                        fill.style.width = width;
+                    }, 100);
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                Reveal.layout();
+            });
+
+        } catch (error) {
+            console.error('Reveal.js initialization error:', error);
+            // Fallback: make presentation viewable without reveal.js
+            document.querySelectorAll('section').forEach((section, index) => {
+                section.style.display = 'block';
+                section.style.marginBottom = '50px';
+                section.style.minHeight = 'auto';
+                section.style.padding = '20px';
+            });
+        }
+    </script>
+</body>
+</html>
